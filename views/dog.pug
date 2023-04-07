@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  - let results = [{Dog_breed:"Labrador",Dog_Size:"small",Dog_value:"$400"},{Dog_breed:"Bulldog",Dog_Size:"Medium",Dog_value:"$750"},{Dog_breed:"chow chow ",Dog_Size:"Large",Dog_value:"$1000"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in results
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p breed is #{item.Dog_breed} size is #{item.Dog_Size} value is #{item.Dog_value}
+  script.
+    function buy(thing) {
+      thing = thing+1;
+      alert(`You Purchased Item ${thing}`);
+    }

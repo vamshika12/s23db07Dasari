@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p I love chocolates #{title}
+  button(type="button", class="btn btn-outline-warning", onclick="doReduce()") PressMe
+
+  div(id = "reduce") Reduce the value
+  a(href="dog") Link to Dog
+
+  
+  script.
+      count = 20
+      change  = -1
+      function doReduce(){
+          count = count + change;
+          change = change  - 1;
+          document.getElementById('reduce').innerHTML = 'Count '+ count +' Change ' + change;
+      }
