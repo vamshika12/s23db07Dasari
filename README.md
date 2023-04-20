@@ -2,4 +2,4 @@
 
 I like chocolates
 
-Dog_Name,Dog_Breed,Dog_Size
+Dog_Name,dog_year,dog_birth

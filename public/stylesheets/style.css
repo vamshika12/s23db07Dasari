@@ -6,3 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+.dogAttr {
+  background-color: aquamarine;
+  width: 120px;
+  color: violet;
+ }
+
+ .b{
+  font-style: italic;
+  background-color: yellow;
+  text-align: center;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+ }
+ .dogupdate {
+  background-color:blue;
+  width: 200px;
+}

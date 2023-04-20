@@ -1,0 +1,26 @@
+extends layout
+
+block content
+ h1(class='b')= title
+
+  if (toShow==null)
+   h2 No Instance for detail
+  else
+   - let dogid = toShow._id 
+   - let dog_name = toShow.dog_name 
+   - let dog_year = toShow.dog_year 
+   - let dog_birth = toShow.dog_birth
+    div 
+    div.row 
+      div(class='dogAttr mr-3') dog id is: 
+      div #{dogid}
+       
+    div.row 
+      div(class='dogAttr mr-3') dog name is: 
+      div #{dog_name} 
+    div.row 
+      div(class='dogAttr mr-3')  year is: 
+      div #{dog_year} 
+    div.row 
+      div(class='dogAttr mr-3') birth is: 
+      div #{dog_birth} 
