@@ -3,15 +3,14 @@ extends layout
 block content
   h1= title
     - let items = results
-    div(class="container-fluid mt-3")
-    div(class="row")
-        each dog,index in items
-              div(class="col-sm-3 bg-info m-2 p-4" onclick=`buy(${index})`) #{dog.dog_name} - #{dog.dog_year } - #{dog.dog_birth}
+    div(class="container-fluid")
+    div(class="row m-1")
+     each item in items
+      - let destination = `dispatch(\"/dog/update?id=${item._id}\")`
+      div(class="row-sm-2", class="m-1") Dog name is #{item.dog_name} dog year and (#{item.dog_year}) month #{item.dog_birth}
+       button.btn( class="btn-primary ml-1", onclick= destination) Update
 
 
     script.
-     
-      function buy(itemNo)
-      {
-        alert(`You purchased Item ${itemNo+1}`)
-      }
+     function dispatch(path){
+      window.location.href=path}
