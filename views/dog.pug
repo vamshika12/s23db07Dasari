@@ -3,13 +3,18 @@ extends layout
 block content
   h1= title
     - let items = results
+    - let destination = `dispatch(\"/dog/create\")`
+    button.btn( class="btn-primary ml-1", onclick= destination) Create
     div(class="container-fluid")
     div(class="row m-1")
      each item in items
-      - let destination = `dispatch(\"/dog/update?id=${item._id}\")`
+      - let destination1 = `dispatch(\"/dog/update?id=${item._id}\")`
+      - let delete1  = `dispatch(\"/dog/delete?id=${item._id}\")`
+      - let details = `dispatch(\"/dog/detail?id=${item._id}\")`
       div(class="row-sm-2", class="m-1") Dog name is #{item.dog_name} dog year and (#{item.dog_year}) month #{item.dog_birth}
-       button.btn( class="btn-primary ml-1", onclick= destination) Update
-
+       button.btn( class="btn-primary ml-1", onclick= destination1) Update
+       button.btn( class="btn-primary ml-1", onclick= delete1) Delete
+       button.btn( class="btn-primary ml-1", onclick= details) Detail
 
     script.
      function dispatch(path){
